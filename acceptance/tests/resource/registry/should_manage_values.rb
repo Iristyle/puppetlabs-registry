@@ -289,6 +289,7 @@ step "Start testing should_manage_values" do
       assert_no_match(/err:/, result.stdout, "Expected no error messages.")
     end
 
+    # TODO: intermittent failures are occurring here
     step "Registry Values - Phase 2.a - Change some values"
     apply_manifest_on agent, getManifest(keypath, vendor_path, '2'), get_apply_opts do
       assert_no_match(/err:/, result.stdout, "Expected no error messages.")
